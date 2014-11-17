@@ -5,3 +5,4 @@ cd ruby-2.1.4
 ./configure
 sudo make
 sudo make install
+sudo gem install rails 
