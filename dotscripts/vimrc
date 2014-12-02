@@ -1,0 +1,38 @@
+execute pathogen#infect()
+set background=dark
+colorscheme solarized
+"autocmd vimenter * if !argc() | NERDTree | endif
+"let g:NERDTreeWinPos = "right"
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd VimEnter * wincmd p
+"Tabs and spaces
+set nocompatible
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set splitright
+set number
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set textwidth=80
+"Ruby Syntax Plugin
+syntax on 
+filetype on
+filetype indent on
+filetype plugin on
+"The shortcuts
+let mapleader = ','
+imap ;; <Esc><CR>
+nmap <Space> i
+:command Wq wq
+:command W w
+map <F2> :NERDTreeToggle<CR>
+map <C-down> :tabl<cr>
+map <C-up> :tabr<cr>
+nnoremap <leader>gg :e Gemfile<CR>
+nnoremap <leader>rr :e config/routes.rb<CR>
+nnoremap <leader>rc :Rcontroller<space>
+nnoremap <leader>rv :Rview<space>
+nnoremap <leader>rmo :Rmodel<space>
