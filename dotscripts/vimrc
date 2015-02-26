@@ -1,10 +1,11 @@
 execute pathogen#infect()
 set background=dark
 colorscheme solarized
-"autocmd vimenter * if !argc() | NERDTree | endif
-"let g:NERDTreeWinPos = "right"
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-"autocmd VimEnter * wincmd p
+call vundle#begin()
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+call vundle#end() 
 "Tabs and spaces
 set nocompatible
 set expandtab
@@ -22,17 +23,27 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
+let g:snippets_dir = "~/.vim/snippets"
+let python_highlight_all = 1
 "The shortcuts
 let mapleader = ','
-imap ;; <Esc><CR>
+imap <leader><leader> <Esc>:wq
 nmap <Space> i
 :command Wq wq
 :command W w
-map <F2> :NERDTreeToggle<CR>
 map <C-down> :tabl<cr>
 map <C-up> :tabr<cr>
 nnoremap <leader>gg :e Gemfile<CR>
 nnoremap <leader>rr :e config/routes.rb<CR>
-nnoremap <leader>rc :Rcontroller<space>
-nnoremap <leader>rv :Rview<space>
+nnoremap <leader>rco :Rcontroller<space>
+nnoremap <leader>rvo :Rview<space>
 nnoremap <leader>rmo :Rmodel<space>
+"Fugitive 
+nnoremap <leader>gc :Gcommit<space>
+nnoremap <leader>ga :Gadd<space>
+nnoremap <leader>gps :Gpush<space>
+
+"Ember.vim shortcuts
+nnoremap <leader>eco :Econtroller<space>
+nnoremap <leader>evo :Eview<space>
+nnoremap <leader>emo :Emodel<space>
