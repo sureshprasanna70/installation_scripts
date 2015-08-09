@@ -1,11 +1,10 @@
 execute pathogen#infect()
-set background=dark
-colorscheme solarized
 call vundle#begin()
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 call vundle#end() 
+set background=dark
 "Tabs and spaces
 set nocompatible
 set expandtab
@@ -18,6 +17,8 @@ set smartcase
 set incsearch
 set hlsearch
 set textwidth=80
+set showmode
+set ruler
 "Ruby Syntax Plugin
 syntax on 
 filetype on
@@ -38,9 +39,12 @@ nnoremap <leader>rr :e config/routes.rb<CR>
 nnoremap <leader>rco :Rcontroller<space>
 nnoremap <leader>rvo :Rview<space>
 nnoremap <leader>rmo :Rmodel<space>
+nnoremap <leader>bi :Bundle install<space>
+nnoremap ;; :q
+
 "Fugitive 
 nnoremap <leader>gc :Gcommit<space>
-nnoremap <leader>ga :Gadd<space>
+nnoremap <leader>ga :Git add -A<space>
 nnoremap <leader>gps :Gpush<space>
 
 "Ember.vim shortcuts
